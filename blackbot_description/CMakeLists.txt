@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  flir_ptu_description
 )
 
 ## System dependencies are found with CMake's conventions
