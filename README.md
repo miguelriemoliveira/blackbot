@@ -32,7 +32,7 @@ TODO: Write credits
 
 ## <a name="license"></a>License
 
+I am using a kinect2 model from [https://github.com/code-iai/iai_robots/tree/master/iai_kinect2_description](https://github.com/code-iai/iai_robots/tree/master/iai_kinect2_description)
+
 The kinect2 meshes are Copyright Universitaet Bremen - Institute for Artificial Intelligence (Prof. Michael Beetz).
-Author: Alexis Maldonado
-Released under the CC BY-SA 4.0 license.
-https://creativecommons.org/licenses/by-sa/4.0/
+Author: Alexis Maldonado Released under the CC BY-SA 4.0 license. https://creativecommons.org/licenses/by-sa/4.0/
