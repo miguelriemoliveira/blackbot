@@ -6,8 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /CameraRobotModel1/Status1
-        - /PointCloud21/Status1
       Splitter Ratio: 0.5
     Tree Height: 697
   - Class: rviz/Selection
@@ -67,11 +65,7 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        aruco_marker_frame:
-          Value: true
         base_link:
-          Value: true
-        kinect2_rgb_optical_frame:
           Value: true
         ptu_base_link:
           Value: true
@@ -95,9 +89,7 @@ Visualization Manager:
               ptu_tilt_link:
                 ptu_tilted_link:
                   ptu_mount_link:
-                    kinect2_rgb_optical_frame:
-                      aruco_marker_frame:
-                        {}
+                    {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -236,9 +228,9 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.236968
-        Y: -0.155993
-        Z: 0.466206
+        X: -0.0291487
+        Y: 0.0521625
+        Z: -0.0114278
       Name: Current View
       Near Clip Distance: 0.01
       Pitch: 0.615397
