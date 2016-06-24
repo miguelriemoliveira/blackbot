@@ -1,9 +1,5 @@
-# blackbot
+# Blackbot
 **ROS** utils for the blackbot robotic system
-
-# TangerineBot
-
-**ROS** utils for the tangerinebot robotic system
 
 ## Table of Contents
 
@@ -16,9 +12,9 @@
 
 ## <a name="therobot"></a>The Robot
 
-The system is composed of an  [asus xtion pro live camera](https://www.asus.com/3D-Sensor/Xtion_PRO_LIVE/) mounted on top of a [road narrows robotics pand and tild unit](https://roadnarrows.com/products/pan-tilt-mount).
+The system is composed of an  [kinect2 camera](https://en.wikipedia.org/wiki/Kinect_for_Xbox_One) mounted on top of a [flir pand and tilt unit](http://www.flir.com/mcs/view/?id=63554).
 
-![Image of tangerinebot](https://github.com/miguelriemoliveira/tangerinebot/blob/master/docs/tangerinebot.jpg)
+![Image of blackbot](https://github.com/miguelriemoliveira/blackbot/blob/master/docs/blackbot.jpg)
 
 ## <a name="installation"></a>Installation
 
