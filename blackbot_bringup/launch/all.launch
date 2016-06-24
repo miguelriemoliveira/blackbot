@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
   <arg name="calibrated" default="true"/>
-  <arg name="calibration_file" default="$(find tangerinebot_calibration)/calibration/default.urdf.xacro"/>
+  <arg name="manual_command" default="false"/>
+  <!--<arg name="calibration_file" default="$(find tangerinebot_calibration)/calibration/default.urdf.xacro"/>-->
 
   <!--uncalibrated system: because the system is not calibrated, we cannot have a single robot state publisher with a disconnected tree. The solution is to launch a second robot state publisher using the camera xacro only-->
   <group unless="$(arg calibrated)">
@@ -28,7 +29,12 @@
   <!--Start the pan and tilt drivers-->
   <include file="$(find blackbot_bringup)/launch/pan_tilt.launch"/>
   <!--Start the camera drivers-->
-  <!--<include file="$(find blackbot_bringup)/launch/camera.launch">-->
+  <include file="$(find blackbot_bringup)/launch/camera.launch">
     <!--<arg name="publish_tf" value="false"/>-->
-  <!--</include>-->
+  </include>
+
+  <group if="$(arg manual_command)">
+    <include file="$(find blackbot_bringup)/launch/manual_command.launch"/>
+  </group>
+
 </launch>
