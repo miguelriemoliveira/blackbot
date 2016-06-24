@@ -95,12 +95,12 @@ rosrun tf view_frames && evince frames.pdf
 
 should be something like this:
 
-![frames_before_calibration](https://github.com/miguelriemoliveira/blackbot/blob/master/docs/frames_before_calibration.png)
+![frames_before_calibration](https://github.com/miguelriemoliveira/blackbot/blob/master/docs/tf_uncalibrated.png)
 
 and after calibration, the tf tree should look like this:
 
 <p align="center">
-<img src="https://github.com/miguelriemoliveira/blackbot/blob/master/docs/frames_after_calibration.png" width="650">
+<img src="https://github.com/miguelriemoliveira/blackbot/blob/master/docs/tf_calibrated.png" width="650">
 </p>
 
 The calibration procedure is based on the [https://github.com/jhu-lcsr/aruco_hand_eye](https://github.com/jhu-lcsr/aruco_hand_eye) ros package. During the calibration the camera should view an aruco marker so that the **camera to aruco transform** is accurately estimated. An aruco marker pdf for printing can be generated at [http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html](http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html)
