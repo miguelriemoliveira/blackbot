@@ -18,26 +18,21 @@ The system is composed of an  [kinect2 camera](https://en.wikipedia.org/wiki/Kin
 
 ## <a name="installation"></a>Installation
 
-This section is still not propperly written.
-
-Roadnarrows github page for installing the pan and tilt drivers can be found at [https://github.com/roadnarrows-robotics/pan_tilt](https://github.com/roadnarrows-robotics/pan_tilt)
-
-There is a conflict between the road narrows ros packages and the ros-indigo-serial package. See [https://github.com/roadnarrows-robotics/pan_tilt/issues/2#issuecomment-225628772](https://github.com/roadnarrows-robotics/pan_tilt/issues/2#issuecomment-225628772)
+TODO ...
 
 ## <a name="usage"></a> Usage
 
 To launch the complete robot system, i.e., camera drivers, pan and tilt drivers and robot_state_publisher run
 
 ```shell
-roslaunch tangerinebot_bringup bringup.launch
+roslaunch blackbot_bringup all.launch
 ```
 
 To visualize the system, run
 
 ```shell
-roslaunch tangerinebot_bringup visualize.launch
+roslaunch blackbot_bringup visualize.launch
 ```
-
 
 ## <a name="calibration"></a>Calibration
 
@@ -46,39 +41,39 @@ A calibration procedure estimates a transformation from the end link of the pan 
 To calibrate (With the setup already mounted), first launch the system in **uncalibrated mode**
 
 ```shell
-roslaunch tangerinebot_bringup bringup.launch calibrated:=false
+roslaunch blackbot_bringup bringup.launch calibrated:=false
 ```
 
 Then, startup a visualization in rviz
 
 ```shell
-roslaunch tangerinebot_calibration visualize.launch
+roslaunch blackbot_calibration visualize.launch
 ```
 
 Finally, run the calibration
 
 ```shell
-roslaunch tangerinebot_calibration calibration.launch marker_id:=582, marker_size:=0.144 interactive:=false 
+roslaunch blackbot_calibration calibration.launch marker_id:=582, marker_size:=0.144 interactive:=false 
 ```
 
 To achieve a very accurate calibration, the procedure should be executed in interactive mode (interactive:=true), meaning that the user should confirm mannually each sample to be used in the calibration procedure.
 
 You should see something like this
 
-![Calibration desktop](https://github.com/miguelriemoliveira/tangerinebot/blob/master/docs/calibration_desktop.png)
+![Calibration desktop](https://github.com/miguelriemoliveira/blackbot/blob/master/docs/calibration_desktop.png)
 
 Then move the pan and tilt manually so that several views of the aruco marker are captured. As more views are collected, the estimated transformation should become more accurate, so the camera reference frames should approach the expected pose in rviz.
 
 After collecting enough views and when you're satisfied with the transformation (either the numbers which are displayed or the reference frames which are shown in rviz), you may store the calibration by running
 
 ```shell
-rosrun tangerinebot_calibration store_calibration.py
+rosrun blackbot_calibration store_calibration.py
 ```
 
-After that the estimated calibration is stored in **(...)/tangerinebot_calibration/calibration/default.urdf.xacro** . To use this new calibration just kill everything and re execute the drivers in **calibrated more**
+After that the estimated calibration is stored in **(...)/blackbot_calibration/calibration/default.urdf.xacro** . To use this new calibration just kill everything and re execute the drivers in **calibrated more**
 
 ```shell
-roslaunch tangerinebot_bringup bringup.launch calibrated:=true
+roslaunch blackbot_bringup bringup.launch calibrated:=true
 ```
 
 in fact you can skip the **calibrated:=true** part since its the default value for the launch file argument.
@@ -86,7 +81,7 @@ in fact you can skip the **calibrated:=true** part since its the default value f
 Here is an example of a calibrated system.
 
 <p align="center">
-<img src="https://github.com/miguelriemoliveira/tangerinebot/blob/master/docs/calibrated_system.png" width="850">
+<img src="https://github.com/miguelriemoliveira/blackbot/blob/master/docs/calibrated_system.png" width="850">
 </p>
 
 
@@ -100,18 +95,18 @@ rosrun tf view_frames && evince frames.pdf
 
 should be something like this:
 
-![frames_before_calibration](https://github.com/miguelriemoliveira/tangerinebot/blob/master/docs/frames_before_calibration.png)
+![frames_before_calibration](https://github.com/miguelriemoliveira/blackbot/blob/master/docs/frames_before_calibration.png)
 
 and after calibration, the tf tree should look like this:
 
 <p align="center">
-<img src="https://github.com/miguelriemoliveira/tangerinebot/blob/master/docs/frames_after_calibration.png" width="650">
+<img src="https://github.com/miguelriemoliveira/blackbot/blob/master/docs/frames_after_calibration.png" width="650">
 </p>
 
 The calibration procedure is based on the [https://github.com/jhu-lcsr/aruco_hand_eye](https://github.com/jhu-lcsr/aruco_hand_eye) ros package. During the calibration the camera should view an aruco marker so that the **camera to aruco transform** is accurately estimated. An aruco marker pdf for printing can be generated at [http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html](http://terpconnect.umd.edu/~jwelsh12/enes100/markergen.html)
 
 <p align="center">
-<img src="https://github.com/miguelriemoliveira/tangerinebot/blob/master/docs/aruco_marker585.png" width="350">
+<img src="https://github.com/miguelriemoliveira/blackbot/blob/master/docs/aruco_marker585.png" width="350">
 </p>
 
 In this image and throughout this tutorial, we assume a marker id 582 with size 0.144
