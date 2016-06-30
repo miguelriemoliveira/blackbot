@@ -35,7 +35,7 @@ To visualize the system, run
 roslaunch blackbot_bringup visualize.launch
 ```
 
-## <a name="calibration"></a>Hand in eye calibration
+## <a name="handineyecalibration"></a>Hand in eye calibration
 
 A calibration procedure estimates a transformation from the end link of the pan and tilt to the first link of the camera. In this case, a transformation from the **tilt_assembly** link to the **camera_link** link. Check the [Calibration Setup](#calibrationsetup) section to learn more about how the system should be setup for calibration.
 
