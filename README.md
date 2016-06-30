@@ -34,14 +34,16 @@ To visualize the system, run
 roslaunch blackbot_bringup visualize.launch
 ```
 
-## <a name="calibration"></a>Calibration
+## <a name="calibration"></a>Hand in eye calibration
 
 A calibration procedure estimates a transformation from the end link of the pan and tilt to the first link of the camera. In this case, a transformation from the **tilt_assembly** link to the **camera_link** link. Check the [Calibration Setup](#calibrationsetup) section to learn more about how the system should be setup for calibration.
+
+The kinect2 calibration should be completed beforehand (https://github.com/code-iai/iai_kinect2/tree/master/kinect2_calibration)[https://github.com/code-iai/iai_kinect2/tree/master/kinect2_calibration]
 
 To calibrate (With the setup already mounted), first launch the system in **uncalibrated mode**
 
 ```shell
-roslaunch blackbot_bringup bringup.launch calibrated:=false
+roslaunch blackbot_bringup all.launch calibrated:=false
 ```
 
 Then, startup a visualization in rviz
