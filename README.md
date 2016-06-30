@@ -73,7 +73,7 @@ After collecting enough views and when you're satisfied with the transformation 
 rosrun blackbot_calibration store_calibration.py
 ```
 
-After that the estimated calibration is stored in **(...)/blackbot_calibration/calibration/default.urdf.xacro** . To use this new calibration just kill everything and re execute the drivers in **calibrated more**
+After that the estimated calibration is stored in **(...)/blackbot_calibration/calibration/hand_in_eye.urdf.xacro** . To use this new calibration just kill everything and re execute the drivers in **calibrated more**
 
 ```shell
 roslaunch blackbot_bringup bringup.launch calibrated:=true
