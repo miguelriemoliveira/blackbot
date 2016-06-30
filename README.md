@@ -26,10 +26,10 @@ TODO ...
 To launch the complete robot system, i.e., camera drivers, pan and tilt drivers and robot_state_publisher run
 
 ```shell
-roslaunch blackbot_bringup all.launch
+roslaunch blackbot_bringup all.launch calibrated:=true
 ```
 
-To visualize the system, run
+You can ommit the calibrated:=true (its the default). To visualize the system, run
 
 ```shell
 roslaunch blackbot_bringup visualize.launch
