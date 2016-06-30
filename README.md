@@ -89,6 +89,8 @@ Here is an example of a calibrated system.
 
 ## <a name="kinect2calibration"></a>Kinect2 calibration
 
+Follow [this](https://github.com/code-iai/iai_kinect2/tree/master/kinect2_calibration).
+
 ## <a name="calibrationsetup"></a>Calibration Setup
 
 Prior to the calibration, there will be no connection between the pan and tilt and the camera, and so the tf tree obtained with
