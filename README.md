@@ -6,7 +6,8 @@
 * [The Robot](#therobot)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Calibration](#calibration)
+* [Hand in eye calibration](#handineyecalibration)
+* [Kinect2 calibration](#kinect2calibration)
 * [Calibration Setup](#calibrationsetup)
 * [Credits](#credits)
 
@@ -86,6 +87,7 @@ Here is an example of a calibrated system.
 <img src="https://github.com/miguelriemoliveira/blackbot/blob/master/docs/calibrated_system.png" width="850">
 </p>
 
+## <a name="kinect2calibration"></a>Kinect2 calibration
 
 ## <a name="calibrationsetup"></a>Calibration Setup
 
