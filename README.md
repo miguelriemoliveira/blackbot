@@ -56,7 +56,7 @@ roslaunch blackbot_calibration visualize.launch
 Finally, run the calibration
 
 ```shell
-roslaunch blackbot_calibration calibration.launch marker_id:=582, marker_size:=0.144 interactive:=false 
+roslaunch blackbot_calibration calibration.launch marker_id:=582 marker_size:=0.144 interactive:=false 
 ```
 
 To achieve a very accurate calibration, the procedure should be executed in interactive mode (interactive:=true), meaning that the user should confirm mannually each sample to be used in the calibration procedure.
