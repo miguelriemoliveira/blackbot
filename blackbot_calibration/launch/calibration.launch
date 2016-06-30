@@ -8,20 +8,20 @@
   <node name="aruco_tracker" pkg="aruco_ros" type="single">
     <!-- Information about the RGB Camera -->
     <!--<remap from="/camera_info" to="camera/rgb/camera_info"/>-->
-    <remap from="/camera_info" to="kinect2/hd/camera_info"/>
+    <remap from="/camera_info" to="camera/hd/camera_info"/>
     <!-- RGB Rectified Image topic  -->
     <!--<remap from="/image" to="camera/rgb/image_rect_color"/>-->
-    <remap from="/image" to="kinect2/hd/image_color_rect"/>
+    <remap from="/image" to="camera/hd/image_color_rect"/>
     <param name="image_is_rectified" value="True"/>
     <param name="marker_size" value="$(arg marker_size)"/>
     <!-- in m -->
     <param name="marker_id" value="$(arg marker_id)"/>
     <!-- RGB Optical Frame -->
     <!--<param name="reference_frame" value="/camera_link"/>-->
-    <param name="reference_frame" value="/kinect2_rgb_optical_frame"/>
+    <param name="reference_frame" value="/camera_rgb_optical_frame"/>
     <!-- RGB Optical Frame (same as reference_frame) -->
     <!--<param name="camera_frame" value="/camera_rgb_optical_frame"/>-->
-    <param name="camera_frame" value="/kinect2_rgb_optical_frame"/>
+    <param name="camera_frame" value="/camera_rgb_optical_frame"/>
     <!-- Aruco Marker Reference Frame (position of the aruco marker in space) -->
     <param name="marker_frame" value="aruco_marker_frame"/>
   </node>

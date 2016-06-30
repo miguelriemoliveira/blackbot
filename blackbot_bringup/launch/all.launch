@@ -3,8 +3,8 @@
   <arg name="calibrated" default="true"/>
   <arg name="manual_command" default="false"/>
   <arg name="fps_limit" default="-1.0"/>
+  <arg name="base_name" default="camera"/>
   <arg name="calibration_file" default="$(find blackbot_calibration)/calibration/hand_in_eye.urdf.xacro"/>
-
   <!--uncalibrated system: because the system is not calibrated, we cannot have a single robot state publisher with a disconnected tree. The solution is to launch a second robot state publisher using the camera xacro only-->
   <group unless="$(arg calibrated)">
     <!--pan and tilt robot description parameter-->
@@ -16,22 +16,21 @@
     <!--camera robot_description parameter-->
     <param name="robot_description_for_camera" command="$(find xacro)/xacro.py '$(find blackbot_description)/urdf/only_camera_system.urdf.xacro'"/>
   </group>
-
   <!--Calibrated system: when using the calibrated system we us a xacro which already contains both the pan and tilt as well as the camera description, as well as the transform between them (obtained from the calibration). In this case, the camera driver does not need to publish the camera transforms.-->
   <group if="$(arg calibrated)">
-  <!--In this case there is only one robot_description parameter-->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find blackbot_description)/urdf/calibrated_system.urdf.xacro' calibration_file:=$(arg calibration_file)"/>
-  <!--Start the (only) robot state publisher-->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" required="true">
+    <!--In this case there is only one robot_description parameter-->
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find blackbot_description)/urdf/calibrated_system.urdf.xacro' calibration_file:=$(arg calibration_file)"/>
+    <!--Start the (only) robot state publisher-->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" required="true">
       <remap from="/joint_states" to="/ptu/state"/>
-  </node>
+    </node>
   </group>
-
   <!--Start the pan and tilt drivers-->
   <include file="$(find blackbot_bringup)/launch/pan_tilt.launch"/>
   <!--Start the camera drivers-->
   <include file="$(find blackbot_bringup)/launch/camera.launch">
     <arg name="fps_limit" value="$(arg fps_limit)"/>
+    <arg name="base_name" value="$(arg base_name)"/>
   </include>
   <!--Start manual control-->
   <group if="$(arg manual_command)">

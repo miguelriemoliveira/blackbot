@@ -5,17 +5,14 @@
   <xacro:arg name="calibration_file"/>
   <!--Include the xacro generated from the calibration-->
   <xacro:include filename="$(arg calibration_file)"/>
-
   <!-- include the description of the road narrows pan and tilt -->
   <xacro:include filename="$(find blackbot_description)/urdf/d46.urdf.xacro"/>
-
   <!--Include a descritpion of the asus camera (from the hector_sensors_description package)-->
   <xacro:include filename="$(find blackbot_description)/urdf/kinect2.urdf.xacro"/>
-
   <!--Create a rnr_pan_tilt instance -->
   <xacro:ptu_d46 name="ptu"/>
   <!--Create the_camera instance, giving as input arguments the values for the estimated transformation-->
-  <xacro:kinect2_xacro prefix="kinect2" parent="ptu_mount_link">
+  <xacro:kinect2_xacro prefix="camera" parent="ptu_mount_link">
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </xacro:kinect2_xacro>
   <joint name="camera_joint" type="fixed">
@@ -24,6 +21,6 @@
     <!--<origin rpy="$(arg roll) $(arg pitch) $(arg yaw)" xyz="$(arg x) $(arg y) $(arg z)"/>-->
     <origin rpy="${roll} ${pitch} ${yaw}" xyz="${x} ${y} ${z}"/>
     <parent link="ptu_mount_link"/>
-    <child link="kinect2_rgb_optical_frame"/>
+    <child link="camera_rgb_optical_frame"/>
   </joint>
 </robot>

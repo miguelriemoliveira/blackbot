@@ -4,7 +4,7 @@
   <!--Include a descritpion of the asus camera (from the hector_sensors_description package)-->
   <xacro:include filename="$(find blackbot_description)/urdf/kinect2.urdf.xacro"/>
   <!--Create the_camera instance, giving as input arguments the values for the estimated transformation-->
-  <xacro:kinect2_xacro prefix="kinect2" parent="ptu_mount_link">
+  <xacro:kinect2_xacro prefix="camera" parent="ptu_mount_link">
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </xacro:kinect2_xacro>
 </robot>
