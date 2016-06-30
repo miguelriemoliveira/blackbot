@@ -44,7 +44,7 @@ The [kinect2 calibration](https://github.com/code-iai/iai_kinect2/tree/master/ki
 To calibrate (With the setup already mounted), first launch the system in **uncalibrated mode**
 
 ```shell
-roslaunch blackbot_bringup all.launch calibrated:=false
+roslaunch blackbot_bringup all.launch calibrated:=false manual_command:=true
 ```
 
 Then, startup a visualization in rviz
