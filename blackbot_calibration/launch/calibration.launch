@@ -12,7 +12,6 @@
     <!-- RGB Rectified Image topic  -->
     <!--<remap from="/image" to="camera/rgb/image_rect_color"/>-->
     <remap from="/image" to="kinect2/hd/image_color_rect"/>
-    
     <param name="image_is_rectified" value="True"/>
     <param name="marker_size" value="$(arg marker_size)"/>
     <!-- in m -->

@@ -13,7 +13,7 @@
 
 ## <a name="therobot"></a>The Robot
 
-The system is composed of an  [kinect2 camera](https://en.wikipedia.org/wiki/Kinect_for_Xbox_One) mounted on top of a [flir pand and tilt unit](http://www.flir.com/mcs/view/?id=63554).
+The system is composed of a [kinect2 camera](https://en.wikipedia.org/wiki/Kinect_for_Xbox_One) mounted on top of a [flir pand and tilt unit](http://www.flir.com/mcs/view/?id=63554).
 
 ![Image of blackbot](https://github.com/miguelriemoliveira/blackbot/blob/master/docs/blackbot.jpg)
 
@@ -123,7 +123,6 @@ Note that, in order to achieve the accurate calibration results, the rgb camera 
 rosrun camera_calibration cameracalibrator.py image:=/camera/rgb/image_raw camera:=/camera/rgb --size 7x5 --square 0.03
 ```
 For detailed tutorials on that see [http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration](http://wiki.ros.org/camera_calibration/Tutorials/MonocularCalibration) and [http://wiki.ros.org/openni_launch/Tutorials/IntrinsicCalibration](http://wiki.ros.org/openni_launch/Tutorials/IntrinsicCalibration)
-
 
 
 ## <a name="license"></a>License
