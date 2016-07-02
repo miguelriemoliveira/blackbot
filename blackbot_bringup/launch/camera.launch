@@ -12,5 +12,6 @@
     <arg name="fps_limit" value="$(arg fps_limit)"/>
     <arg name="calib_path" value="$(arg calib_path)"/>
     <arg name="depth_method" value="$(arg depth_method)"/>
+    <arg name="max_depth" value="8"/>
   </include>
 </launch>
