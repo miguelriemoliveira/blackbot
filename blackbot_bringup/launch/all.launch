@@ -4,6 +4,8 @@
   <arg name="manual_command" default="false"/>
   <arg name="fps_limit" default="-1.0"/>
   <arg name="base_name" default="camera"/>
+  <arg name="max_depth" default="4"/>
+
   <arg name="calibration_file" default="$(find blackbot_calibration)/calibration/hand_in_eye.urdf.xacro"/>
   <!--uncalibrated system: because the system is not calibrated, we cannot have a single robot state publisher with a disconnected tree. The solution is to launch a second robot state publisher using the camera xacro only-->
   <group unless="$(arg calibrated)">
@@ -31,6 +33,7 @@
   <include file="$(find blackbot_bringup)/launch/camera.launch">
     <arg name="fps_limit" value="$(arg fps_limit)"/>
     <arg name="base_name" value="$(arg base_name)"/>
+    <arg name="max_depth" value="$(arg max_depth)"/>
   </include>
   <!--Start manual control-->
   <group if="$(arg manual_command)">

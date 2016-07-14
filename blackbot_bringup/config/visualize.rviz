@@ -55,12 +55,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_link:
-          Value: true
-        base_link_optical:
-          Value: true
-        camera_rgb_meshlab:
-          Value: true
         camera_rgb_optical_frame:
           Value: true
         ptu_base_link:
@@ -80,15 +74,12 @@ Visualization Manager:
       Show Names: true
       Tree:
         ptu_base_link:
-          base_link_optical:
-            {}
           ptu_pan_link:
             ptu_tilt_link:
               ptu_tilted_link:
                 ptu_mount_link:
                   camera_rgb_optical_frame:
-                    camera_rgb_meshlab:
-                      {}
+                    {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -200,22 +191,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 0.647688
+      Distance: 0.440187
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.222451
-        Y: 0.044568
-        Z: 0.0643466
+        X: 0.0026756
+        Y: -0.0226599
+        Z: 0.0818945
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.714795
+      Pitch: 0.284796
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.40724
+      Yaw: 0.767697
     Saved: ~
 Window Geometry:
   Displays:
