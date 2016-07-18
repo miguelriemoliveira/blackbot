@@ -56,7 +56,7 @@ roslaunch blackbot_calibration visualize.launch
 Finally, run the calibration
 
 ```shell
-roslaunch blackbot_calibration calibration.launch marker_id:=582 marker_size:=0.144 interactive:=false 
+roslaunch blackbot_calibration calibration.launch marker_id:=582 marker_size:=0.1685 interactive:=false 
 ```
 
 To achieve a very accurate calibration, the procedure should be executed in interactive mode (interactive:=true), meaning that the user should confirm mannually each sample to be used in the calibration procedure.
@@ -115,7 +115,7 @@ The calibration procedure is based on the [https://github.com/jhu-lcsr/aruco_han
 <img src="https://github.com/miguelriemoliveira/blackbot/blob/master/docs/aruco_marker585.png" width="350">
 </p>
 
-In this image and throughout this tutorial, we assume a marker id 582 with size 0.144
+In this image and throughout this tutorial, we assume a marker id 582 with size 0.1685
 
 Note that, in order to achieve the accurate calibration results, the rgb camera of the asus must be calibrated prior to this procedure, using a chessboard and a monocular rgb calibration
 
