@@ -4,6 +4,8 @@
   <arg name="publish_tf" default="false"/>
   <arg name="fps_limit" default="-1.0"/>
   <arg name="max_depth" default="4"/>
+  <arg name="queue_size" default="1"/>
+
   <!--<arg name="calib_path" default="$(find kinect2_bridge)/data/"/>-->
   <arg name="calib_path" default="$(find blackbot_calibration)/calibration/"/>
   <arg name="depth_method" default="opencl"/>
@@ -14,5 +16,6 @@
     <arg name="calib_path" value="$(arg calib_path)"/>
     <arg name="depth_method" value="$(arg depth_method)"/>
     <arg name="max_depth" value="$(arg max_depth)"/>
+    <arg name="queue_size" value="$(arg queue_size)"/>
   </include>
 </launch>
