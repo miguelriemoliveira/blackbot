@@ -1,4 +1,4 @@
-#%YAML:1.0
+%YAML:1.0
 cameraMatrix: !!opencv-matrix
    rows: 3
    cols: 3
